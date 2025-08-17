@@ -1,10 +1,15 @@
-# Reverse
+Palindrome 
+x = int(input("Enter a number: "))
 
-x = int(input("Enter an integer: "))
-sign = -1 if x < 0 else 1
-x = abs(x)
-rev = int(str(x)[::-1]) * sign
-if rev < -2**31 or rev > 2**31 - 1:
-    print(0)
+temp = x
+rev = 0
+
+while x > 0:
+    digit = x % 10
+    rev = rev * 10 + digit
+    x = x // 10
+
+if temp == rev:
+    print("Palindrome")
 else:
-    print("Reversed Integer:", rev)
+    print("Not Palindrome")
